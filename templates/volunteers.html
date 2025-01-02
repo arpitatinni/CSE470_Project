@@ -1,0 +1,42 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}Available Volunteers{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <h1 class="text-center mb-4">Available Volunteers</h1>
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>id</th>
+                    <th>Name</th>
+                    <th>Area</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for volunteer in volunteers %}
+                <tr>
+                    <td>{{ volunteer.id }}</td>
+                    <td>{{ getVolunteerName(volunteer.user_id) }}</td>
+                    <td>{{ volunteer.service_area }}</td>
+                    <td>
+                        <a href="{{ url_for('accept_donation', donation_id=donation.id, volunteer_id=volunteer.id) }}" class="btn btn-primary">Assign</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

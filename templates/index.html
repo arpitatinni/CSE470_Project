@@ -1,0 +1,69 @@
+{% extends 'bootstrap.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block nav %}
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">MealMatch</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/dashboard">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/profile/ngo/1">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+{% endblock %}
+
+{% block body %}
+
+<header class="bg-dark text-white text-center py-5">
+    <h1>MealMatch</h1>
+    <p class="lead">Connecting restaurants with NGOs to reduce food waste and feed the needy</p>
+</header>
+
+
+<main class="container my-5">
+    <div class="row">
+
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title"><b>For Restaurants</b></h3>
+                    <p class="card-text">Donate your leftover food to make a difference. Join our network and help us fight hunger.</p>
+                    <a href="/signup" class="btn btn-primary">Join Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mt-4 mt-md-0">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title"><b>For NGOs/Volunteers</b></h3>
+                    <p class="card-text">Collect and distribute food to those in need. Partner with us to ensure no food goes to waste.</p>
+                    <a href="/signup" class="btn btn-primary">Get Involved</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<footer class="text-center py-3 bg-light text-muted fixed-bottom">
+    <div class="container">
+        <p class="mb-0">&copy; 2024 Food Donation Initiative. All rights reserved.</p>
+    </div>
+</footer>
+
+{% endblock %}
